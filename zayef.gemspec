@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Merouane AMQOR"]
   spec.email = ["marouane.amqor@gmail.com"]
 
-  spec.summary = "Zayef - A Ruby gem for generating fake data with a Moroccan touch"
-  spec.description = "Zayef provides utilities for generating fake data, perfect for testing and development with a unique Moroccan flavor."
+  spec.summary = "🇲🇦 Zayef - Authentic Moroccan Data Generator for Ruby"
+  spec.description = "Zayef (زايف) is the first Ruby gem dedicated to generating authentic Moroccan data. Perfect for testing, development, and localization with 300+ real Moroccan names, cities, companies, and cultural elements. From traditional dishes to medical specialties - everything Moroccan! 🔥"
   spec.homepage = "https://github.com/merouaneamqor/zayef"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
