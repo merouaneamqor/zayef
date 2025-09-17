@@ -1,0 +1,132 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'open3'
+require 'optparse'
+
+# Changelog generation script for Zayef gem
+class ChangelogGenerator
+  def initialize
+    @git_cliff_available = check_git_cliff
+    @options = {}
+  end
+
+  def check_git_cliff
+    Open3.capture3('git-cliff --version').last.success?
+  end
+
+  def parse_options
+    OptionParser.new do |opts|
+      opts.banner = "Usage: generate-changelog [options]"
+
+      opts.on("--latest", "Generate changelog for latest version") do |v|
+        @options[:latest] = v
+      end
+
+      opts.on("--unreleased", "Generate unreleased changes only") do |v|
+        @options[:unreleased] = v
+      end
+
+      opts.on("--tag TAG", "Generate changelog up to specific tag") do |v|
+        @options[:tag] = v
+      end
+
+      opts.on("--output FILE", "Output file (default: CHANGELOG.md)") do |v|
+        @options[:output] = v
+      end
+
+      opts.on("--help", "Show this help") do
+        puts opts
+        exit
+      end
+    end.parse!
+  end
+
+  def generate_changelog
+    return false unless @git_cliff_available
+
+    output_file = @options[:output] || "CHANGELOG.md"
+
+    # Build git-cliff command
+    cmd = ["git-cliff"]
+
+    if @options[:latest]
+      cmd << "--latest"
+    elsif @options[:unreleased]
+      cmd << "--unreleased"
+    elsif @options[:tag]
+      cmd << "--tag" << @options[:tag]
+    end
+
+    cmd << "-o" << output_file
+
+    puts "🔄 Generating changelog..."
+    stdout, stderr, status = Open3.capture3(*cmd)
+
+    if status.success?
+      puts "✅ Changelog generated successfully: #{output_file}"
+      puts "📋 Preview of changes:"
+      puts "-" * 50
+      # Show first few lines of the generated changelog
+      File.open(output_file, 'r') do |file|
+        file.each_line.take(10).each { |line| puts line }
+      end
+      puts "-" * 50
+      true
+    else
+      puts "❌ Failed to generate changelog: #{stderr}"
+      false
+    end
+  end
+
+  def install_git_cliff
+    puts "📦 Installing git-cliff..."
+    puts "Run one of the following commands:"
+    puts ""
+    puts "  # Using cargo (recommended):"
+    puts "  cargo install git-cliff"
+    puts ""
+    puts "  # Using homebrew (macOS):"
+    puts "  brew install git-cliff"
+    puts ""
+    puts "  # Using scoop (Windows):"
+    puts "  scoop install git-cliff"
+    puts ""
+    puts "  # Download from GitHub:"
+    puts "  https://github.com/orhun/git-cliff/releases"
+  end
+
+  def run
+    parse_options
+
+    unless @git_cliff_available
+      puts "❌ git-cliff is not installed!"
+      puts ""
+      install_git_cliff
+      return false
+    end
+
+    success = generate_changelog
+
+    if success
+      puts ""
+      puts "🎉 Changelog generation complete!"
+      puts "💡 Tip: Use conventional commits for better changelog organization:"
+      puts "   • feat: new features"
+      puts "   • fix: bug fixes"
+      puts "   • docs: documentation"
+      puts "   • style: formatting"
+      puts "   • refactor: code restructuring"
+      puts "   • test: testing"
+      puts "   • chore: maintenance"
+    end
+
+    success
+  end
+end
+
+# Run the changelog generator
+if __FILE__ == $PROGRAM_NAME
+  generator = ChangelogGenerator.new
+  generator.run
+end

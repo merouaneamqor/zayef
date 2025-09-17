@@ -11,6 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary = "Zayef - A Ruby gem for generating fake data with a Moroccan touch"
   spec.description = "Zayef provides utilities for generating fake data, perfect for testing and development with a unique Moroccan flavor."
   spec.homepage = "https://github.com/amqor/zayef"
+  spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"

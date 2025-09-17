@@ -104,11 +104,106 @@ Zayef.festival               # => "Festival de Marrakech"
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+### 📝 Automated Changelog
+
+Zayef uses [git-cliff](https://github.com/orhun/git-cliff) for automated changelog generation based on conventional commits.
+
+#### Installation
+
+Install git-cliff:
+```bash
+# Using cargo (recommended)
+cargo install git-cliff
+
+# Or using homebrew (macOS)
+brew install git-cliff
+
+# Or download from GitHub releases
+```
+
+#### Usage
+
+```bash
+# Generate full changelog
+./bin/generate-changelog
+
+# Generate changelog for unreleased changes only
+./bin/generate-changelog --unreleased
+
+# Generate changelog for latest version
+./bin/generate-changelog --latest
+
+# Generate changelog up to specific tag
+./bin/generate-changelog --tag v1.0.0
+
+# Check if git-cliff is available
+rake changelog:check
+```
+
+#### Conventional Commits
+
+Use conventional commit format for better changelog organization:
+
+```bash
+# Features
+git commit -m "feat: add Moroccan phone number generation"
+
+# Bug fixes
+git commit -m "fix: correct CNI number format"
+
+# Documentation
+git commit -m "docs: update README with new examples"
+
+# Breaking changes
+git commit -m "feat!: change API interface (breaking change)"
+
+# With scope
+git commit -m "feat(generator): add support for traditional dishes"
+```
+
+### 🚀 Release Process
+
+Zayef includes automated release tasks:
+
+```bash
+# Prepare release (generate changelog, bump version)
+rake release:prepare
+
+# Publish to RubyGems.org
+rake release:publish
+
+# Full release process
+rake release:full
+```
+
+### 📋 Development Tasks
+
+```bash
+# Run all quality checks
+rake
+
+# Generate documentation
+rake dev:docs
+
+# Create conventional commit interactively
+rake git:commit
+
+# Check changelog generation
+rake changelog:check
+```
 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/amqor/zayef.
+
+### 📝 Contributing Guidelines
+
+1. **Use Conventional Commits**: Follow the conventional commit format for automatic changelog generation
+2. **Add Tests**: Include tests for new features
+3. **Update Documentation**: Keep README and inline documentation up to date
+4. **Follow Ruby Style**: Use consistent Ruby coding style
 
 ## License
 
