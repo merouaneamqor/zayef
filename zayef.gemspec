@@ -10,15 +10,15 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Zayef - A Ruby gem for generating fake data with a Moroccan touch"
   spec.description = "Zayef provides utilities for generating fake data, perfect for testing and development with a unique Moroccan flavor."
-  spec.homepage = "https://github.com/amqor/zayef"
+  spec.homepage = "https://github.com/merouaneamqor/zayef"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/amqor/zayef"
-  spec.metadata["changelog_uri"] = "https://github.com/amqor/zayef/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/merouaneamqor/zayef"
+  spec.metadata["changelog_uri"] = "https://github.com/merouaneamqor/zayef/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
