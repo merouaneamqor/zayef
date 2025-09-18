@@ -105,8 +105,23 @@ namespace :dev do
   desc "Run tests and linting"
   task :test do
     puts "🧪 Running tests..."
-    # Add test commands here when tests are added
+    sh "bundle exec rspec"
     puts "✅ Tests complete"
+  end
+
+  desc "Run tests with coverage"
+  task :test_with_coverage do
+    puts "🧪 Running tests with coverage..."
+    ENV['COVERAGE'] = 'true'
+    sh "bundle exec rspec"
+    puts "✅ Tests with coverage complete"
+  end
+
+  desc "Run RuboCop linting"
+  task :lint do
+    puts "🔍 Running RuboCop..."
+    sh "bundle exec rubocop"
+    puts "✅ RuboCop complete"
   end
 
   desc "Generate documentation"
@@ -116,8 +131,36 @@ namespace :dev do
   end
 
   desc "Check code quality"
-  task quality: [:test, :docs] do
+  task quality: [:test, :lint, :docs] do
     puts "✅ Code quality checks complete"
+  end
+end
+
+# Test tasks
+namespace :test do
+  desc "Run tests"
+  task :run do
+    sh "bundle exec rspec"
+  end
+
+  desc "Run tests with coverage"
+  task :coverage do
+    ENV['COVERAGE'] = 'true'
+    sh "bundle exec rspec"
+  end
+
+  desc "Run specific test file"
+  task :file, [:file_path] do |t, args|
+    if args[:file_path]
+      sh "bundle exec rspec #{args[:file_path]}"
+    else
+      puts "Usage: rake test:file[file_path]"
+    end
+  end
+
+  desc "Run tests with verbose output"
+  task :verbose do
+    sh "bundle exec rspec --format documentation"
   end
 end
 

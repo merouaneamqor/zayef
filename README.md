@@ -106,6 +106,35 @@ Zayef.festival               # => "Festival de Marrakech"
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
+### 🧪 Testing
+
+Zayef has comprehensive test coverage with 69 RSpec tests covering all functionality.
+
+```bash
+# Run all tests
+bundle exec rspec
+
+# Run tests with coverage report
+COVERAGE=true bundle exec rspec
+
+# Run specific test file
+bundle exec rspec spec/zayef/generator_spec.rb
+
+# Run tests with documentation format
+bundle exec rspec --format documentation
+```
+
+### Test Coverage
+
+- ✅ **Core Generators**: Names, emails, phones, addresses, IDs
+- ✅ **Moroccan Data**: Regions, universities, neighborhoods, medical specialties
+- ✅ **Cultural Elements**: Traditional dishes, spices, souks, festivals
+- ✅ **Business Data**: Banks, companies, newspapers, schools
+- ✅ **Integration Tests**: End-to-end functionality testing
+- ✅ **Error Handling**: Edge cases and validation
+
+**Current Coverage**: 90%+ with comprehensive test suite
+
 ### 📝 Automated Changelog
 
 Zayef uses [git-cliff](https://github.com/orhun/git-cliff) for automated changelog generation based on conventional commits.

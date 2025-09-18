@@ -176,27 +176,27 @@ module Zayef
 
       def region
         # Moroccan regions
-        regions = %w[
-          Casablanca-Settat Rabat-Salé-Kénitra
-          Fès-Meknès Marrakech-Safi
-          Tanger-Tétouan-Al Hoceïma
-          Oriental Béni Mellal-Khénifra
-          Drâa-Tafilalet Souss-Massa
-          Guelmim-Oued Noun Laâyoune-Sakia El Hamra
-          Dakhla-Oued Ed-Dahab
+        regions = [
+          "Casablanca-Settat", "Rabat-Salé-Kénitra",
+          "Fès-Meknès", "Marrakech-Safi",
+          "Tanger-Tétouan-Al Hoceïma",
+          "Oriental", "Béni Mellal-Khénifra",
+          "Drâa-Tafilalet", "Souss-Massa",
+          "Guelmim-Oued Noun", "Laâyoune-Sakia El Hamra",
+          "Dakhla-Oued Ed-Dahab"
         ]
         regions.sample
       end
 
       def university
         # Moroccan universities
-        universities = %w[
-          "Université Mohammed V de Rabat" "Université Hassan II de Casablanca"
-          "Université Ibn Tofail de Kénitra" "Université Cadi Ayyad de Marrakech"
-          "Université Abdelmalek Essaâdi de Tanger" "Université Sidi Mohammed Ben Abdellah de Fès"
-          "Université Ibn Zohr d'Agadir" "Université Chouaib Doukkali d'El Jadida"
-          "Université Sultan Moulay Slimane de Beni Mellal" "Université Mohammed Premier d'Oujda"
-          "Université Hassan Ier de Settat" "École Polytechnique de l'Université Internationale de Rabat"
+        universities = [
+          "Université Mohammed V de Rabat", "Université Hassan II de Casablanca",
+          "Université Ibn Tofail de Kénitra", "Université Cadi Ayyad de Marrakech",
+          "Université Abdelmalek Essaâdi de Tanger", "Université Sidi Mohammed Ben Abdellah de Fès",
+          "Université Ibn Zohr d'Agadir", "Université Chouaib Doukkali d'El Jadida",
+          "Université Sultan Moulay Slimane de Beni Mellal", "Université Mohammed Premier d'Oujda",
+          "Université Hassan Ier de Settat", "École Polytechnique de l'Université Internationale de Rabat"
         ]
         universities.sample
       end
@@ -205,37 +205,37 @@ module Zayef
 
       def neighborhood
         # Famous Moroccan neighborhoods and districts
-        neighborhoods = %w[
-          Medina Gueliz Maarif Anfa Derb Sultan
-          Hay Hassani Sbata Lissasfa Ain Diab
-          Racine Bourgogne Palmier Californie
-          Ouasis Sidi Bernoussi Mers Sultan
-          Agdal Yacoub El Mansour Hassan
-          Souissi La Gironde El Oulfa
-          L'Hivernage Marjane Touarga
-          Massira Sidi Moumen Hay Mohammadi
-          Ben M'sick Sidi Othman El Harti
-          Tabriquet Les Princes Sidi Maârouf
-          Diour Jamaâ Hay El Hanaa
-          Errahma Hay El Farah
+        neighborhoods = [
+          "Medina", "Gueliz", "Maarif", "Anfa", "Derb Sultan",
+          "Hay Hassani", "Sbata", "Lissasfa", "Ain Diab",
+          "Racine", "Bourgogne", "Palmier", "Californie",
+          "Ouasis", "Sidi Bernoussi", "Mers Sultan",
+          "Agdal", "Yacoub El Mansour", "Hassan",
+          "Souissi", "La Gironde", "El Oulfa",
+          "L'Hivernage", "Marjane", "Touarga",
+          "Massira", "Sidi Moumen", "Hay Mohammadi",
+          "Ben M'sick", "Sidi Othman", "El Harti",
+          "Tabriquet", "Les Princes", "Sidi Maârouf",
+          "Diour", "Jamaâ", "Hay El Hanaa",
+          "Errahma", "Hay El Farah"
         ]
         neighborhoods.sample
       end
 
       def medical_specialty
         # Moroccan medical specialties (since it's DabaDoc)
-        specialties = %w[
-          Médecine générale Pédiatrie Cardiologie
-          Dermatologie Ophtalmologie ORL
-          Gynécologie Obstétrique Chirurgie générale
-          Médecine interne Psychiatrie Radiologie
-          Anesthésie-réanimation Néphrologie
-          Hépatologie Gastro-entérologie Endocrinologie
-          Rhumatologie Neurologie Urologie
-          Traumatologie Orthopédie Chirurgie plastique
-          Chirurgie vasculaire Médecine du travail
-          Médecine légale Médecine nucléaire
-          Médecine physique Oncologie
+        specialties = [
+          "Médecine générale", "Pédiatrie", "Cardiologie",
+          "Dermatologie", "Ophtalmologie", "ORL",
+          "Gynécologie Obstétrique", "Chirurgie générale",
+          "Médecine interne", "Psychiatrie", "Radiologie",
+          "Anesthésie-réanimation", "Néphrologie",
+          "Hépatologie", "Gastro-entérologie", "Endocrinologie",
+          "Rhumatologie", "Neurologie", "Urologie",
+          "Traumatologie", "Orthopédie", "Chirurgie plastique",
+          "Chirurgie vasculaire", "Médecine du travail",
+          "Médecine légale", "Médecine nucléaire",
+          "Médecine physique", "Oncologie"
         ]
         specialties.sample
       end
@@ -258,17 +258,17 @@ module Zayef
 
       def traditional_dish
         # Famous Moroccan traditional dishes
-        dishes = %w[
-          Couscous Tagine Pastilla Harira
-          Rfissa Tanjia Mechoui Briouates
-          Msemen Meloui Baghrir Khobz
-          Bissara Lentilles aux merguez
-          Khlia Merguez Sardines grillées
-          Daqous aux olives Kefta aux œufs
-          Poulet aux citrons confits
-          Tajine aux pruneaux Tajine aux abricots
-          Chorba frik Soupe de poisson
-          Maâqouda Zaalouk
+        dishes = [
+          "Couscous", "Tagine", "Pastilla", "Harira",
+          "Rfissa", "Tanjia", "Mechoui", "Briouates",
+          "Msemen", "Meloui", "Baghrir", "Khobz",
+          "Bissara", "Lentilles aux merguez",
+          "Khlia", "Merguez", "Sardines grillées",
+          "Daqous aux olives", "Kefta aux œufs",
+          "Poulet aux citrons confits",
+          "Tajine aux pruneaux", "Tajine aux abricots",
+          "Chorba frik", "Soupe de poisson",
+          "Maâqouda", "Zaalouk"
         ]
         dishes.sample
       end
@@ -291,106 +291,106 @@ module Zayef
 
       def souk
         # Famous Moroccan markets/souks
-        souks = %w[
-          Souk Semmarine Souk El Kébir Souk El Attarine
-          Souk Zitoun El Jdid Souk El Hadadine
-          Souk El Bahia Souk Smarine Souk El Ghezel
-          Souk El Koutoubine Souk El Abid
-          Souk Sebbaghine Souk Cherratine
-          Souk Nejjarine Marché Central
-          Souk Al Fassia Souk El Joutia
+        souks = [
+          "Souk Semmarine", "Souk El Kébir", "Souk El Attarine",
+          "Souk Zitoun El Jdid", "Souk El Hadadine",
+          "Souk El Bahia", "Souk Smarine", "Souk El Ghezel",
+          "Souk El Koutoubine", "Souk El Abid",
+          "Souk Sebbaghine", "Souk Cherratine",
+          "Souk Nejjarine", "Marché Central",
+          "Souk Al Fassia", "Souk El Joutia"
         ]
         souks.sample
       end
 
       def bank
         # Moroccan banks
-        banks = %w[
-          "Attijariwafa Bank" "Banque Centrale Populaire"
-          "BMCI" "Banque Marocaine pour le Commerce et l'Industrie"
-          "Société Générale Maroc" "Crédit du Maroc"
-          "Banque Marocaine du Commerce Extérieur" "CIH Bank"
-          "Crédit Immobilier et Hôtelier" "Al Barid Bank"
-          "Bank Al Maghrib" "CFG Bank"
-          "Crédit Agricole du Maroc" "Umnia Bank"
+        banks = [
+          "Attijariwafa Bank", "Banque Centrale Populaire",
+          "BMCI", "Banque Marocaine pour le Commerce et l'Industrie",
+          "Société Générale Maroc", "Crédit du Maroc",
+          "Banque Marocaine du Commerce Extérieur", "CIH Bank",
+          "Crédit Immobilier et Hôtelier", "Al Barid Bank",
+          "Bank Al Maghrib", "CFG Bank",
+          "Crédit Agricole du Maroc", "Umnia Bank"
         ]
         banks.sample
       end
 
       def restaurant
         # Moroccan restaurant/café names
-        restaurants = %w[
-          "Café Clock" "Nomad" "Le Jardin"
-          "Café Bousafsaf" "Dar Moha" "Al Fassia"
-          "Café de France" "Le Jardin d'Essai"
-          "Café Hafa" "Nomad Café" "Dar Essalam"
-          "Café Central" "Le Jardin Secret"
-          "Café Arabe" "Dar El Hana"
+        restaurants = [
+          "Café Clock", "Nomad", "Le Jardin",
+          "Café Bousafsaf", "Dar Moha", "Al Fassia",
+          "Café de France", "Le Jardin d'Essai",
+          "Café Hafa", "Nomad Café", "Dar Essalam",
+          "Café Central", "Le Jardin Secret",
+          "Café Arabe", "Dar El Hana"
         ]
         restaurants.sample
       end
 
       def hotel
         # Moroccan hotels/riads
-        hotels = %w[
-          "Riad Kniza" "Palmeraie Palace"
-          "Hotel Sahrai" "Riad Al Fassia"
-          "Hotel El Andalous" "Riad El Cadi"
-          "Hotel Atlas Medina" "Riad Dar Anika"
-          "Hotel Nomade" "Riad Zitouna"
-          "Hotel Al Fassia" "Riad Les Jardin"
+        hotels = [
+          "Riad Kniza", "Palmeraie Palace",
+          "Hotel Sahrai", "Riad Al Fassia",
+          "Hotel El Andalous", "Riad El Cadi",
+          "Hotel Atlas Medina", "Riad Dar Anika",
+          "Hotel Nomade", "Riad Zitouna",
+          "Hotel Al Fassia", "Riad Les Jardin"
         ]
         hotels.sample
       end
 
       def mosque
         # Famous Moroccan mosques
-        mosques = %w[
-          "Mosquée Hassan II" "Mosquée Koutoubia"
-          "Mosquée Al Quaraouiyine" "Mosquée Bahia"
-          "Mosquée Saadian" "Mosquée Moulay Idriss"
-          "Mosquée El Badi" "Mosquée Lalla Aouda"
-          "Mosquée Tin Mal" "Mosquée Nejjarine"
-          "Mosquée Cherratine" "Mosquée El Glaoui"
+        mosques = [
+          "Mosquée Hassan II", "Mosquée Koutoubia",
+          "Mosquée Al Quaraouiyine", "Mosquée Bahia",
+          "Mosquée Saadian", "Mosquée Moulay Idriss",
+          "Mosquée El Badi", "Mosquée Lalla Aouda",
+          "Mosquée Tin Mal", "Mosquée Nejjarine",
+          "Mosquée Cherratine", "Mosquée El Glaoui"
         ]
         mosques.sample
       end
 
       def school
         # Moroccan schools and educational institutions
-        schools = %w[
-          "Lycée Descartes" "Lycée Lyautey"
-          "Lycée Moulay Youssef" "Lycée Mohammed V"
-          "École Américaine" "Lycée Français"
-          "École Mission La Sallle" "Lycée Victor Hugo"
-          "École Sainte Marie" "Lycée Ibn Khaldoun"
-          "École Al Khansaa" "Lycée Ibn Sina"
+        schools = [
+          "Lycée Descartes", "Lycée Lyautey",
+          "Lycée Moulay Youssef", "Lycée Mohammed V",
+          "École Américaine", "Lycée Français",
+          "École Mission La Sallle", "Lycée Victor Hugo",
+          "École Sainte Marie", "Lycée Ibn Khaldoun",
+          "École Al Khansaa", "Lycée Ibn Sina"
         ]
         schools.sample
       end
 
       def newspaper
         # Moroccan newspapers and media
-        newspapers = %w[
-          "Le Matin" "L'Économiste"
-          "Libération" "Aujourd'hui le Maroc"
-          "Al Alam" "Assabah"
-          "Bayane Al Yaoum" "Al Akhbar"
-          "Al Massae" "Al Ahdath Al Maghribia"
-          "Al Ittihad Al Ichtiraki" "Rissalat Al Oumma"
+        newspapers = [
+          "Le Matin", "L'Économiste",
+          "Libération", "Aujourd'hui le Maroc",
+          "Al Alam", "Assabah",
+          "Bayane Al Yaoum", "Al Akhbar",
+          "Al Massae", "Al Ahdath Al Maghribia",
+          "Al Ittihad Al Ichtiraki", "Rissalat Al Oumma"
         ]
         newspapers.sample
       end
 
       def festival
         # Moroccan festivals and cultural events
-        festivals = %w[
-          "Festival de Marrakech" "Festival de Fès"
-          "Festival de Tan-Tan" "Festival de Rabat"
-          "Festival Mawazine" "Festival Jazzablanca"
-          "Festival de Taroudant" "Festival de Meknès"
-          "Festival de Ouarzazate" "Festival de Tanger"
-          "Festival de Chefchaouen" "Festival de Asilah"
+        festivals = [
+          "Festival de Marrakech", "Festival de Fès",
+          "Festival de Tan-Tan", "Festival de Rabat",
+          "Festival Mawazine", "Festival Jazzablanca",
+          "Festival de Taroudant", "Festival de Meknès",
+          "Festival de Ouarzazate", "Festival de Tanger",
+          "Festival de Chefchaouen", "Festival de Asilah"
         ]
         festivals.sample
       end
