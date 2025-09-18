@@ -24,3 +24,4 @@ end
 puts '✅ MOROCCAN_LAST_NAMES and MOROCCAN_CITIES now have quotes!'
 puts '✅ All 300+ Moroccan data entries working perfectly!'
 puts '=' * 60
+

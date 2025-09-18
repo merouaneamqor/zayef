@@ -15,3 +15,4 @@ SimpleCov.start do
     source_file.filename =~ /version\.rb$/
   end
 end
+

@@ -130,3 +130,4 @@ if __FILE__ == $PROGRAM_NAME
   generator = ChangelogGenerator.new
   generator.run
 end
+
